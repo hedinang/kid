@@ -9,12 +9,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class PaintActivity extends AppCompatActivity {
+import com.example.myapplication.common.Common;
+import com.thebluealliance.spectrum.SpectrumPalette;
+
+public class PaintActivity extends AppCompatActivity implements SpectrumPalette.OnColorSelectedListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
         initToolbar();
+        SpectrumPalette spectrumPalette = findViewById(R.id.palette);
+        spectrumPalette.setOnColorSelectedListener(this);
     }
 
     private void initToolbar() {
@@ -36,9 +41,14 @@ public class PaintActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.action_save) {
 
-        } else if (id == R.id.home) {
+        } else if (id == R.id.action_back) {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onColorSelected(int color) {
+        Common.COLOR_SELECT = color;
     }
 }

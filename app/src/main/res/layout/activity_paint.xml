@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".PaintActivity">
@@ -23,5 +24,13 @@
     <com.example.myapplication.widget.PaintView
         android:id="@+id/paint_view"
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="match_parent" />
+    <com.thebluealliance.spectrum.SpectrumPalette
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:spectrum_autoPadding="true"
+        app:spectrum_outlineWidth="2dp"
+        app:spectrum_colors="@array/demo_colors"
+        android:id="@+id/palette"/>
 </LinearLayout>
