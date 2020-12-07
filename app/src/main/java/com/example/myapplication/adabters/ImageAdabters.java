@@ -32,6 +32,7 @@ public class ImageAdabters extends RecyclerView.Adapter<ImageViewHolder> {
         List<Integer> results = new ArrayList<>();
         results.add(R.drawable.a);
         results.add(R.drawable.b);
+        results.add(R.drawable.c);
         return results;
     }
 

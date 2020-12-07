@@ -41,7 +41,7 @@ public class PaintActivity extends AppCompatActivity implements SpectrumPalette.
         int id = item.getItemId();
         if (id == R.id.action_save) {
 
-        } else if (id == R.id.action_back) {
+        } else if (id == android.R.id.home) {
             finish();
         }
         return super.onOptionsItemSelected(item);

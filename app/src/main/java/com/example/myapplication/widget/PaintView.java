@@ -36,14 +36,15 @@ public class PaintView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        paint((int)event.getX(),(int)event.getY());
+        paint((int) event.getX(), (int) event.getY());
         return super.onTouchEvent(event);
-        
+
     }
 
     private void paint(int x, int y) {
-        int targetColor = bitmap.getPixel(x,y);
-        FloodFill.floodFill(bitmap,new Point(x,y),targetColor,Common.COLOR_SELECT);
+        int targetColor = bitmap.getPixel(x, y);
+        bitmap = FloodFill.floodFillUtil(bitmap, bitmap.getWidth(), bitmap.getHeight(), targetColor, Common.COLOR_SELECT, bitmap.getWidth(), bitmap.getHeight());
+//        FloodFill.floodFill(bitmap, new Point(x, y), targetColor, Common.COLOR_SELECT);
         invalidate();
     }
 

@@ -25,6 +25,7 @@
         <item>@color/colorPrimary</item>
         <item>@color/blue</item>
         <item>@color/item_toolabr</item>
-        <item>@color/gris_light</item>
+        <item>@color/orrange_light</item>
+        <item>@color/red</item>
     </array>
 </resources>
